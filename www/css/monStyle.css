@@ -1,0 +1,329 @@
+.cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 20px;
+	margin-bottom: 30px;
+}
+
+.resized {
+    padding-top: 3.7rem;
+    padding-bottom: 3.7rem;
+}
+
+.languages {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	text-align: center;
+    height: 14rem;
+    flex: 0 1 200px;
+}
+
+.logo-language {
+	contain: size;
+	padding: 1rem;
+	height: 95%;
+	width: 95%;
+	border-radius: 20px;
+	box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.4);
+}
+
+i {
+	background-color: blue;
+}
+
+div.divider>div>h3 {
+	text-align: center;
+}
+
+.accueil-img {
+	height: 4rem;
+    width: auto;
+}
+
+
+.infobulle {
+	position: relative;
+	margin-bottom: 6px;
+	background-color: #c8f6fc;
+	padding-left: 25%;
+	padding-right: 25%;
+	border-radius: 25px;
+	opacity: 0;
+}
+
+.infobulle:before {
+	position: absolute;
+	content: "";
+	height: 12px;
+	width: 12px;
+	background: #c8f6fc;
+	bottom: -6px;
+	left: 50%;
+	transform: translateX(-50%) rotate(45deg);
+}
+
+.cards .languages:hover .infobulle {
+	animation: tooltipPopUp;
+	animation-duration: 0.7s;
+	opacity: 1;
+}
+
+@keyframes tooltipPopUp {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.formulaire {
+	padding: 40px;
+	text-align: center;
+	background-color: whitesmoke;
+	border-radius: 20px;
+	box-shadow: 15px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.formulaire div {
+	text-align: left;
+}
+
+.formulaire button {
+	margin-top: 10px;
+	display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-color: #c8f6fc;
+    border: 0.125rem solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+	padding: 1rem 1.75rem;
+    font-size: 1.25rem;
+}
+
+.skill-board {
+	border: 4px solid;
+	margin: 2rem;
+	padding: 0rem;
+}
+
+.skill-board th {
+	border: 4px solid;
+	border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
+
+}
+
+.skill-board td {
+	border: 2px solid;
+}
+
+div.portfolio-item {
+	box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Preloader page*/
+.loader {
+    background-color: hsl(31, 28%, 71%);
+    font: 1em/1.5 sans-serif;
+	height: 100vh;
+    width: 100%;
+	display: grid;
+	place-items: center;
+    position: fixed;
+    z-index: 1031;
+}
+
+.fade-out {
+    animation: load;
+    animation-delay: 2s;
+    animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes load {
+    100%{
+        opacity: 0;
+        transition: opacity 0.4s ease-out;
+    }
+}
+
+.pl,
+.pl__ball,
+.pl__ball-inner-shadow,
+.pl__ball-side-shadows,
+.pl__ball-texture,
+.pl__inner-ring,
+.pl__outer-ring,
+.pl__track-cover {
+	border-radius: 50%;
+}
+.pl {
+    background-color: hsl(31, 28%, 71%);
+	position: relative;
+	width: 16em;
+	height: 16em;
+    /* position: fixed; */
+}
+.pl__ball,
+.pl__ball-inner-shadow,
+.pl__ball-outer-shadow,
+.pl__ball-side-shadows,
+.pl__ball-texture,
+.pl__ball-texture:before,
+.pl__inner-ring,
+.pl__outer-ring,
+.pl__track-cover {
+	position: absolute;
+}
+.pl__ball,
+.pl__ball-inner-shadow,
+.pl__ball-outer-shadow,
+.pl__ball-texture:before,
+.pl__track-cover {
+	animation: ball 3s linear infinite;
+}
+.pl__ball {
+	top: calc(50% - 1.25em);
+	left: calc(50% - 1.25em);
+	transform: rotate(0) translateY(-6.5em);
+	width: 2.5em;
+	height: 2.5em;
+}
+.pl__ball-inner-shadow {
+	animation-name: ballInnerShadow;
+	box-shadow:
+		0 0.1em 0.2em hsla(0, 0%, 0%, 0.3),
+		0 0 0.2em hsla(0, 0%, 0%, 0.1) inset,
+		0 -1em 0.5em hsla(0, 0%, 0%, 0.15) inset;
+	width: 100%;
+	height: 100%;
+}
+.pl__ball-outer-shadow {
+	animation-name: ballOuterShadow;
+	background-image: linear-gradient(hsla(0, 0%, 0%, 0.15),hsla(0, 0%, 0%, 0));
+	border-radius: 0 0 50% 50% / 0 0 100% 100%;
+	filter: blur(2px);
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 250%;
+	transform: rotate(20deg);
+	transform-origin: 50% 0;
+	z-index: -2;
+}
+.pl__ball-side-shadows {
+	background-color: hsla(0, 0%, 0%, 0.1);
+	filter: blur(2px);
+	width: 100%;
+	height: 100%;
+	transform: scale(0.75,1.1);
+	z-index: -1;
+}
+.pl__ball-texture {
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	transform: translate3d(0,0,0);
+}
+.pl__ball-texture:before {
+	animation-name: ballTexture;
+	animation-duration: 0.25s;
+	background: url(../assets/img/effects/snow.jpg) 0 0 / 50% 100%;
+	content: "";
+	display: block;
+	filter: brightness(1.05);
+	top: 0;
+	right: 0;
+	width: 200%;
+	height: 100%;
+}
+.pl__inner-ring {
+	box-shadow:
+		0 -0.25em 0.5em hsla(0, 0%, 100%, 0.4),
+		0 0.5em 0.75em hsla(0, 0%, 100%, 0.4) inset,
+		0 0.5em 0.375em hsla(0, 0%, 0%, 0.15),
+		0 -0.5em 0.75em hsla(0, 0%, 0%, 0.15) inset;
+	top: 2.375em;
+	left: 2.375em;
+	width: calc(100% - 4.75em);
+	height: calc(100% - 4.75em);
+}
+.pl__outer-ring {
+	box-shadow:
+		0 -0.45em 0.375em hsla(0, 0%, 0%, 0.15),
+		0 0.5em 0.75em hsla(0, 0%, 0%, 0.15) inset,
+		0 0.25em 0.5em hsla(0, 0%, 100%, 0.4),
+		0 -0.5em 0.75em hsla(0, 0%, 100%, 0.4) inset;
+		top: 0.75em;
+	left: 0.75em;
+	width: calc(100% - 1.5em);
+	height: calc(100% - 1.5em);
+}
+.pl__track-cover {
+	animation-name: trackCover;
+	background-image: conic-gradient(hsl(31, 28%, 71%) 210deg, hsla(223, 90%, 95%, 0) 270deg);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+/* Animations */
+@keyframes ball {
+	from {
+		transform: rotate(0) translateY(-6.5em);
+	}
+	50% {
+		transform: rotate(180deg) translateY(-6em);
+	}
+	to {
+		transform: rotate(360deg) translateY(-6.5em);
+	}
+}
+@keyframes ballInnerShadow {
+	from {
+		transform: rotate(0);
+	}
+	to {
+		transform: rotate(-360deg);
+	}
+}
+@keyframes ballOuterShadow {
+	from {
+		transform: rotate(20deg);
+	}
+	to {
+		transform: rotate(-340deg);
+	}
+}
+@keyframes ballTexture {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(50%);
+	}
+}
+@keyframes trackCover {
+	from {
+		transform: rotate(0);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
